@@ -6,12 +6,12 @@ import { uuid } from './../util/uuid';
  * Message represents one message being sent in a Thread
  */
  export class Message {
-   id: string;
-   sentAt: Date;
-   isRead: boolean;
-   author: User;
-   text: string;
-   thread: Thread;
+   id: string; // 消息id
+   sentAt: Date; // 发送时间
+   isRead: boolean; // read or not
+   author: User; // the author
+   text: string; // the content of message
+   thread: Thread; // the thread of current message
 
    constructor(obj?: any) {
      this.id              = obj && obj.id              || uuid();

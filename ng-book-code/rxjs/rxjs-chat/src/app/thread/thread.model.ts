@@ -5,15 +5,15 @@ import { uuid } from '../util/uuid';
  * Thread represents a group of Users exchanging Messages
  */
  export class Thread {
-   id: string;
-   lastMessage: Message;
-   name: string;
-   avatarSrc: string;
+   id: string; // 线程id
+   lastMessage: Message; // 最后一条消息
+   name: string;  // 线程名称
+   avatarSrc: string; // 头像
 
    constructor(id?: string,
                name?: string,
                avatarSrc?: string) {
-     this.id = id || uuid();
+     this.id = id || uuid(); // id或者uuid生成新的
      this.name = name;
      this.avatarSrc = avatarSrc;
    }

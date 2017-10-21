@@ -29,7 +29,6 @@ export class ChatNavBarComponent implements OnInit {
         this.threadsService.currentThread,
         (messages: Message[], currentThread: Thread) =>
           [currentThread, messages] )
-
       .subscribe(([currentThread, messages]: [Thread, Message[]]) => {
         this.unreadMessagesCount =
           _.reduce(

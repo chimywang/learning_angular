@@ -1,18 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
+
 import { User } from '../user/user.model';
 import { Thread } from '../thread/thread.model';
 import { Message } from '../message/message.model';
-
+// init messageArr as an empty array
 const initialMessages: Message[] = [];
 
 interface IMessagesOperation extends Function {
-  (messages: Message[]): Message[];
+  (messages: Message[]): Message[]; // a function return Message[]
+  // messages: Message[];
 }
 
+/**
+ * the messageService
+ */
 @Injectable()
 export class MessagesService {
   // a stream that publishes new messages only once
+  // singleton
   newMessages: Subject<Message> = new Subject<Message>();
 
   // `messages` is a stream that emits an array of the most up to date messages
@@ -25,13 +31,22 @@ export class MessagesService {
 
   // action streams
   create: Subject<Message> = new Subject<Message>();
+
   markThreadAsRead: Subject<any> = new Subject<any>();
+
+  // scan 操作符签名：
+  // public scan(accumulator: function(acc: R, value: T, index: number): R,
+  // seed: T | R): Observable<R>
+  // scan 操作符作用：
+  // 对 Observable 发出值，执行 accumulator 指定的运算，可以简单地认为是 Observable 版本的 Array.prototype.reduce 。
+
 
   constructor() {
     this.messages = this.updates
       // watch the updates and accumulate operations on the messages
       .scan((messages: Message[],
              operation: IMessagesOperation) => {
+               debugger;
                return operation(messages);
              },
             initialMessages)
@@ -39,8 +54,7 @@ export class MessagesService {
       // who's interested in subscribing and cache the last known list of
       // messages
       .publishReplay(1)
-      .refCount();
-
+      .refCount(); // refCount 必须搭配 multicast 一起使用，在调用 multicast 操作符后，接着调用 refCount() 。
     // `create` takes a Message and then puts an operation (the inner function)
     // on the `updates` stream to add the Message to the list of messages.
     //
@@ -58,6 +72,7 @@ export class MessagesService {
     this.create
       .map( function(message: Message): IMessagesOperation {
         return (messages: Message[]) => {
+          debugger;
           return messages.concat(message);
         };
       })
@@ -75,6 +90,7 @@ export class MessagesService {
             // note that we're manipulating `message` directly here. Mutability
             // can be confusing and there are lots of reasons why you might want
             // to, say, copy the Message object or some other 'immutable' here
+            debugger;
             if (message.thread.id === thread.id) {
               message.isRead = true;
             }
@@ -88,10 +104,12 @@ export class MessagesService {
 
   // an imperative function call to this action stream
   addMessage(message: Message): void {
+    debugger;
     this.newMessages.next(message);
   }
 
   messagesForThreadUser(thread: Thread, user: User): Observable<Message> {
+    debugger;
     return this.newMessages
       .filter((message: Message) => {
                // belongs to this thread
