@@ -2,6 +2,7 @@ import { Message } from '../message/message.model';
 import { uuid } from '../util/uuid';
 
 /**
+stores a collection of Messages as well as some data about the conversation
  * Thread represents a group of Users exchanging Messages
  */
  export class Thread {
