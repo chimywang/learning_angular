@@ -104,12 +104,10 @@ export class MessagesService {
 
   // an imperative function call to this action stream
   addMessage(message: Message): void {
-    debugger;
     this.newMessages.next(message);
   }
 
   messagesForThreadUser(thread: Thread, user: User): Observable<Message> {
-    debugger;
     return this.newMessages
       .filter((message: Message) => {
                // belongs to this thread

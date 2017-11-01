@@ -3,6 +3,7 @@ import { Thread } from '../thread/thread.model';
 import { uuid } from './../util/uuid';
 
 /**
+stores an individual message
  * Message represents one message being sent in a Thread
  */
  export class Message {

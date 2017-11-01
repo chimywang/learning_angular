@@ -1,6 +1,7 @@
 import { uuid } from '../util/uuid';
 
 /**
+ * stores information about a chat participant
  * A User represents an agent that sends messages
  */
 export class User {
