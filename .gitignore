@@ -1,5 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
-/*/.idea/modules.xml
-/*/.idea/misc.xml
+/*/.idea/
+/*/*/.idea/
 /*/node_modules/
-
+/*/*/node_modules/
+/*/*/*/node_modules/
+/*/*/*/*/node_modules/
+.idea/
+/router/.idea/

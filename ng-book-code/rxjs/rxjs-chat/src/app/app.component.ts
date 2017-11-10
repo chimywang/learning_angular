@@ -14,7 +14,6 @@ export class AppComponent {
     constructor(public messagesService: MessagesService,
               public threadsService: ThreadsService,
               public usersService: UsersService) {
-      // sdfa
     ChatExampleData.init(messagesService, threadsService, usersService);
   }
 }
