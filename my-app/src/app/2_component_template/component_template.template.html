@@ -1,0 +1,38 @@
+<!--
+所有的html语法都可以在模板中使用，<script></script> 除了script
+如果使用。会被忽略，并且报出警告-->
+
+
+
+<p>
+  My current hero is {{currentHero.name}}
+</p>
+
+
+<h3>
+  {{title}}
+
+  <img src="{{heroImageUrl}}"  style="height: 30px" alt="img">
+</h3>
+
+<!-- "The sum of 1 + 1 is 2" -->
+<p>
+  the sum of 1 + 1 id {{1 + 1}}
+</p>
+
+<p>
+  the sum of 1 + 1 is  not  {{ 1+ 1 + getVal()}}
+</p>
+
+
+<!--no support for the bitwise operators
+| and &
+不支持微运算
+-->
+<!--
+new template expression operators, such as |, ?. and !.
+新的模板表达式：
+1. |   管道
+2. ?.
+3. !.
+-->
