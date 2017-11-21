@@ -1,8 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-
 import {PageNotFoundComponent} from './demo/not-found/not-found.component';
-
 import {CanDeactivateGuard} from './demo/service/can-deactivate-guard.service';
 import {AuthGuard} from './demo/service/auth-guard.service';
 import {SelectivePreloadingStrategy} from './demo/service/selective-preloading-strategy';
@@ -22,6 +20,16 @@ const appRoutes: Routes = [
   {
     path: 'crisis-center',
     loadChildren: 'app/demo/crisis-center/crisis-center.module#CrisisCenterModule',
+    data: {preload: true}
+  },
+  {
+    path: 'heroes',
+    loadChildren: 'app/demo/heroes/heroes.module#HeroesModule',
+    data: {preload: true}
+  },
+  {
+    path: 'ad',
+    loadChildren: 'app/demo/dynamic/dynamic.module#DynamicModule',
     data: {preload: true}
   },
   {path: '**', component: PageNotFoundComponent}

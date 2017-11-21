@@ -7,10 +7,12 @@ import {ManageCrisesComponent} from './manage-crises.component';
 import {ManageHeroesComponent} from './manage-heroes.component';
 
 import {AdminRoutingModule} from './admin-routing.module';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     AdminRoutingModule
   ],
   declarations: [

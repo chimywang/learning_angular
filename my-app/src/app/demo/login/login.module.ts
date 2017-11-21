@@ -5,6 +5,7 @@ import {AuthService} from '../service/auth.service';
 import {LoginComponent} from './login.component';
 import {FormsModule} from "@angular/forms";
 import {BrowserModule} from "@angular/platform-browser";
+import {CommonModule} from "@angular/common";
 
 const loginRoutes: Routes = [
   {path: 'login', component: LoginComponent}
@@ -12,7 +13,7 @@ const loginRoutes: Routes = [
 
 @NgModule({
   imports: [
-    BrowserModule,
+    CommonModule,
     FormsModule,
     RouterModule.forChild(loginRoutes)
   ],
@@ -22,9 +23,7 @@ const loginRoutes: Routes = [
   exports: [
     RouterModule
   ],
-  providers: [
-    AuthGuard,
-    AuthService
-  ]
+  providers: []
 })
-export class LoginModule {}
+export class LoginModule {
+}

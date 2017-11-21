@@ -34,7 +34,9 @@ const adminRoutes: Routes = [
   exports: [
     RouterModule
   ],
-  providers: [AuthGuard]
+  providers: [
+    
+  ]
 })
 export class AdminRoutingModule {
 }
