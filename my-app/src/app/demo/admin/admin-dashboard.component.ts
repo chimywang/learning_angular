@@ -1,13 +1,13 @@
-import { Component, OnInit }    from '@angular/core';
-import { ActivatedRoute }       from '@angular/router';
-import { Observable }           from 'rxjs/Observable';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Observable} from 'rxjs/Observable';
 
-import { SelectivePreloadingStrategy } from '../service/selective-preloading-strategy';
+import {SelectivePreloadingStrategy} from '../service/selective-preloading-strategy';
 
 import 'rxjs/add/operator/map';
 
 @Component({
-  template:  `
+  template: `
     <p>Dashboard</p>
 
     <p>Session ID: {{ sessionId | async }}</p>
@@ -25,10 +25,8 @@ export class AdminDashboardComponent implements OnInit {
   token: Observable<string>;
   modules: string[];
 
-  constructor(
-    private route: ActivatedRoute,
-    private preloadStrategy: SelectivePreloadingStrategy
-  ) {
+  constructor(private route: ActivatedRoute,
+              private preloadStrategy: SelectivePreloadingStrategy) {
     this.modules = preloadStrategy.preloadedModules;
   }
 

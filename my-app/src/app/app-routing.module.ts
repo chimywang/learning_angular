@@ -1,27 +1,27 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {PageNotFoundComponent} from './not-found/not-found.component';
+import {PageNotFoundComponent} from './demo/not-found/not-found.component';
 
-import {CanDeactivateGuard} from './service/can-deactivate-guard.service';
-import {AuthGuard} from './service/auth-guard.service';
-import {SelectivePreloadingStrategy} from './service/selective-preloading-strategy';
+import {CanDeactivateGuard} from './demo/service/can-deactivate-guard.service';
+import {AuthGuard} from './demo/service/auth-guard.service';
+import {SelectivePreloadingStrategy} from './demo/service/selective-preloading-strategy';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {
     path: 'login',
-    loadChildren: 'app/login/login.module#LoginModule',
+    loadChildren: 'app/demo/login/login.module#LoginModule',
     canLoad: [AuthGuard]
   },
   {
     path: 'admin',
-    loadChildren: 'app/admin/admin.module#AdminModule',
+    loadChildren: 'app/demo/admin/admin.module#AdminModule',
     canLoad: [AuthGuard]
   },
   {
     path: 'crisis-center',
-    loadChildren: 'app/crisis-center/crisis-center.module#CrisisCenterModule',
+    loadChildren: 'app/demo/crisis-center/crisis-center.module#CrisisCenterModule',
     data: {preload: true}
   },
   {path: '**', component: PageNotFoundComponent}
