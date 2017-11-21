@@ -1,6 +1,5 @@
 import {Component, OnInit} from "@angular/core";
 import {Hero} from "./hero";
-import {BaseHrefWebpackPlugin} from "@angular/cli/lib/base-href-webpack";
 
 @Component({
   selector: 'app-display-data',
@@ -18,7 +17,6 @@ export class DisplayDataComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    debugger;
   }
 
 }
