@@ -20,6 +20,9 @@ import {LoginModule} from "./demo/login/login.module";
 import {CrisisCenterModule} from "./demo/crisis-center/crisis-center.module";
 import {AdminModule} from "./demo/admin/admin.module";
 import {DynamicModule} from "./demo/dynamic/dynamic.module";
+import {AttriDirectiveModule} from "./demo/attribute_directive/attri-directive.module";
+import {StructuralDirectiveModule} from "./demo/structural_directive/structural-directive.module";
+import {MyPipeModule} from "./demo/pipe/my-pipe.module";
 
 @NgModule({
   imports: [
@@ -27,6 +30,9 @@ import {DynamicModule} from "./demo/dynamic/dynamic.module";
     FormsModule,
     HeroesModule,
     DynamicModule,
+    AttriDirectiveModule,
+    StructuralDirectiveModule,
+    MyPipeModule,
     // AdminModule,
     // CrisisCenterModule,
     LoginModule,

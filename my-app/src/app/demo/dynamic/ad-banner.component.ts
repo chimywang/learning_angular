@@ -1,17 +1,17 @@
-import {Component, Input, AfterViewInit, ViewChild, ComponentFactoryResolver, OnDestroy} from '@angular/core';
+import {AfterViewInit, Component, ComponentFactoryResolver, Input, OnDestroy, ViewChild} from '@angular/core';
 
 import {AdDirective} from './ad.directive';
-import {AdItem}      from './ad-item';
+import {AdItem} from './ad-item';
 import {AdComponent} from './ad.component';
 
 @Component({
   selector: 'app-add-banner',
   template: `
-              <div>
-                <h3>Advertisements</h3>
-                <ng-template ad-host></ng-template>
-              </div>
-            `
+    <div>
+      <h3>Advertisements</h3>
+      <ng-template ad-host></ng-template>
+    </div>
+  `
 })
 export class AdBannerComponent implements AfterViewInit, OnDestroy {
   @Input() ads: AdItem[];

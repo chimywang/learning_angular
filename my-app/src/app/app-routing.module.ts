@@ -32,6 +32,21 @@ const appRoutes: Routes = [
     loadChildren: 'app/demo/dynamic/dynamic.module#DynamicModule',
     data: {preload: true}
   },
+  {
+    path: 'at_directive',
+    loadChildren: 'app/demo/attri_directive/attri-directive.module#AttriDirectiveModule',
+    // data: {preload: true}
+  },
+  {
+    path: 'structural_directive',
+    loadChildren: 'app/demo/structural_directive/structural-directive.module#StructuralDirectiveModule',
+    // data: {preload: true}
+  },
+  {
+    path: 'pipe',
+    loadChildren: 'app/demo/pipe/my-pipe.module#MyPipeModule',
+    // data: {preload: true}
+  },
   {path: '**', component: PageNotFoundComponent}
 ];
 
