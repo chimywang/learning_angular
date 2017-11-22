@@ -23,6 +23,7 @@ import {DynamicModule} from "./demo/dynamic/dynamic.module";
 import {AttriDirectiveModule} from "./demo/attribute_directive/attri-directive.module";
 import {StructuralDirectiveModule} from "./demo/structural_directive/structural-directive.module";
 import {MyPipeModule} from "./demo/pipe/my-pipe.module";
+import {FormModule} from "./demo/form/form.module";
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import {MyPipeModule} from "./demo/pipe/my-pipe.module";
     AttriDirectiveModule,
     StructuralDirectiveModule,
     MyPipeModule,
+    FormModule,
     // AdminModule,
     // CrisisCenterModule,
     LoginModule,

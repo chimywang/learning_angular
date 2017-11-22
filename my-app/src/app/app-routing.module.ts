@@ -34,18 +34,23 @@ const appRoutes: Routes = [
   },
   {
     path: 'at_directive',
-    loadChildren: 'app/demo/attri_directive/attri-directive.module#AttriDirectiveModule',
-    // data: {preload: true}
+    loadChildren: 'app/demo/attribute_directive/attri-directive.module#AttriDirectiveModule',
+    data: {preload: true}
   },
   {
     path: 'structural_directive',
     loadChildren: 'app/demo/structural_directive/structural-directive.module#StructuralDirectiveModule',
-    // data: {preload: true}
+    data: {preload: true}
   },
   {
     path: 'pipe',
     loadChildren: 'app/demo/pipe/my-pipe.module#MyPipeModule',
-    // data: {preload: true}
+    data: {preload: true}
+  },
+  {
+    path: 'form',
+    loadChildren: 'app/demo/form/form.module#FormModule',
+    data: {preload: true}
   },
   {path: '**', component: PageNotFoundComponent}
 ];
