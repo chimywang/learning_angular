@@ -7,8 +7,8 @@ interface Reducer<T> {
   (state: T, action: Action): T;
 }
 
-let reducer: Reducer<number> = (state: number, action: Action) => {
+let reducer0: Reducer<number> = (state: number, action: Action) => {
   return state;
 };
 
-console.log( reducer(0, null) ); // -> 0
+console.log( reducer0(0, null) ); // -> 0

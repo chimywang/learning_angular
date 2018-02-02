@@ -1,15 +1,11 @@
-import {
-  Component,
-  Inject,
-  OnInit
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';
 
-import { ThreadsService } from './../thread/threads.service';
-import { MessagesService } from './../message/messages.service';
+import { ThreadsService } from '../thread/threads.service';
+import { MessagesService } from '../message/messages.service';
 
-import { Thread } from './../thread/thread.model';
-import { Message } from './../message/message.model';
+import { Thread } from '../thread/thread.model';
+import { Message } from '../message/message.model';
 
 @Component({
   selector: 'chat-nav-bar',
@@ -28,7 +24,7 @@ export class ChatNavBarComponent implements OnInit {
       .combineLatest(
         this.threadsService.currentThread,
         (messages: Message[], currentThread: Thread) =>
-          [currentThread, messages] )
+          [currentThread, messages])
       .subscribe(([currentThread, messages]: [Thread, Message[]]) => {
         this.unreadMessagesCount =
           _.reduce(
@@ -37,9 +33,6 @@ export class ChatNavBarComponent implements OnInit {
               const messageIsInCurrentThread: boolean = m.thread &&
                 currentThread &&
                 (currentThread.id === m.thread.id);
-              // note: in a "real" app you should also exclude
-              // messages that were authored by the current user b/c they've
-              // already been "read"
               if (m && !m.isRead && !messageIsInCurrentThread) {
                 sum = sum + 1;
               }
